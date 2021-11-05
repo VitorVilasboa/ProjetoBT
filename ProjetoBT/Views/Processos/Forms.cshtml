@@ -1,0 +1,42 @@
+﻿@model ProjetoBT.ViewModels.VMProcessosForms
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>Processo</h1>
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-4">
+        <form class="form">
+            <div class="form-group">
+                @Html.LabelFor(m => m.dValorCausa)
+                @Html.TextBoxFor(m => m.dValorCausa, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.dValorCausa, "" , new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.sNomeContratante)
+                @Html.TextBoxFor(m => m.sNomeContratante, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.sNomeContratante, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.sNomeEscritório)
+                @Html.TextBoxFor(m => m.sNomeEscritório, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.sNomeEscritório, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,39 @@
+﻿@model ProjetoBT.ViewModels.VMProcessosIndex
+
+@{
+    ViewData["Title"] = "Processos";
+}
+
+<h1>Processos</h1>
+
+<div>
+    <hr />
+
+    <table class="table table-responsive-lg table-bordered table">
+        <tr>
+            <th>Código do Processo</th>
+            <th>Valor da Causa</th>
+            <th>Nome do Contratante</th>
+            <th>Nome do Escitório</th>
+            <th>Editar</th>
+            <th>Aprovar</th>
+        </tr>
+        <tbody>
+            @foreach (var oProcesso in Model.ListaProcessos)
+            {
+                <tr>
+                    <td class="d-table-cell"> @oProcesso.iProcesso </td>
+                    <td> @oProcesso.dValorCausa </td>
+                    <td> @oProcesso.sNomeContratante</td>
+                    <td> @oProcesso.sNomeEscritório </td>
+                    <td> <a id="btnEditarProcesso" href="/Processos/Forms?iProcesso=@oProcesso.iProcesso" class="btn btn-primary btn-info"> Editar </a></td>
+                    <td> @Html.CheckBox("chkAprovado", oProcesso.bAprovarCausa, new { @class = "form-check" })
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+
+</script>

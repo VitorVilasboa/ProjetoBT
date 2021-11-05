@@ -1,0 +1,127 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-body {
+    display: flex;
+    border: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ddd;
+}
+
+.content {
+    background-color: white;
+    border-radius:15px;
+    width:30%;
+    height:60%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+}
+
+
+.first-column{
+    text-align:center;
+    flex: 1 0 auto;
+    z-index:10;
+}
+
+.title{
+    font-size: 28px;
+    font-weight:bold;
+    text-transform:capitalize;
+}
+
+
+.title-second {
+    color: #38d26b;
+}
+
+.description{
+    font-size:14px;
+    font-weight:300;
+    line-height:30px;
+}
+
+.description-secondary {
+    color: #38d26b
+}
+
+.btn{
+    border-radius: 15px;
+    text-transform: uppercase;
+    color:#fff;
+    font-size:10px;
+    padding:10px 50px;
+    cursor:pointer;
+    font-weight: bold;
+    width:150px;
+    align-self:center;
+    border-width:0;
+}
+
+
+.btn-secondary-login {
+    background-color: #38d26b;
+    border: 1px solid #fff;
+}
+
+.btn-secondary-login:hover {
+    background-color: #fff;
+    border-color: #38d26b;
+    color: #38d26b;
+}
+
+.second-column {
+    flex: 2 0 auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.first-content{
+    display:flex;
+    position:relative;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-content input {
+    height: 45px;
+    border: none;
+    background-color: #ecf0f1;
+    width: 100%;
+    border:0;
+}
+
+.label-input {
+    background-color: #ecf0f1;
+    display:flex;
+    align-items:center;
+    margin:8px;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.icon-modify{
+   margin-right:6px;
+   margin-left:6px;
+}

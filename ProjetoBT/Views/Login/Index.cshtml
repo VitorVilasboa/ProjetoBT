@@ -1,0 +1,57 @@
+﻿@model ProjetoBT.ViewModels.VMLoginIndex
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+ <div class="container-body">
+        <!--Primeiro Conteudo-->
+     <div class="content first-content">
+         <div class="second-column">
+             <!-- Segunda Coluna -->
+             <h2 class="title title-second">Bem vindo!</h2>
+             <p class="description description-secondary">Clique no botão abaixo para efetuar o Login</p>
+             <form id="form" class="form-content">
+                 <label class="label-input" for="">
+                     <i class="far fa-user icon-modify"></i>
+                     @Html.TextBoxFor(m => m.nomeUsuario, "", new { @placeholder = "Usuário" })
+                 </label>
+                 <label class="label-input" for="">
+                     <i class="fas fa-lock icon-modify"></i>
+                     @Html.TextBoxFor(m => m.senhaUsuario, "", new { @placeholder = "Senha" })
+                 </label>
+                 <button id="btnLogin" onclick="ValidateLogin();" class="btn btn-secondary-login">Login</button>
+             </form>
+             <span id="sMensagem" class="modal-dialog" style="display:none;"></span>
+         </div>
+     </div>
+ </div>
+<script>
+
+    function ValidateLogin() {
+            event.preventDefault();
+
+        var FormData = $('#form').serialize();
+
+            debugger;
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    async: false,
+                    url: "/Login/Forms",
+                    data: FormData,
+                    success: function (retorno) {
+                        switch (retorno.CodigoRetorno) {
+                            case 0:
+                                $('#sMensagem').show();
+                                $('#sMensagem').html(retorno.Mensagem);
+                            case 1:
+                                window.location.href = "/Home/Index";
+                                break;
+                        }
+                    }
+                });
+    }
+
+</script>
